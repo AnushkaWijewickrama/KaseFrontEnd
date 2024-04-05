@@ -1,0 +1,23 @@
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px">
+      <h1 class="mb-3">Our Clients</h1>
+    </div>
+    <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+      @for (item of clientList; track item._id) {
+
+      {{item.imagePath}}
+      <div class="testimonial-item bg-light rounded p-3">
+        <div class="bg-white border rounded p-4">
+          sdsds
+          <div class="d-flex align-items-center">
+            <img class="img-fluid flex-shrink-0 rounded" [src]="item.imagePath" style="width: auto; height: auto" />
+          </div>
+        </div>
+      </div>
+      } @empty {
+      <li>There are no items.</li>
+      }
+    </div>
+  </div>
+</div>
