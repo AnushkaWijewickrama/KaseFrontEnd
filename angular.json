@@ -42,6 +42,9 @@
             "scripts": [
               "src/assets/js/jquery.min.js",
               "src/assets/js/lib/owlcarousel/owl.carousel.min.js",
+              "src/assets/js/lib/easing/easing.min.js",
+              "src/assets/js/lib/waypoints/waypoints.min.js",
+              "src/assets/js/lib/wow/wow.min.js",
               "src/assets/js/bootstrap.bundle.min.js",
               "src/assets/js/main.js"
             ],
@@ -109,6 +112,9 @@
             ],
             "scripts": [
               "src/assets/js/jquery.min.js",
+              "src/assets/js/lib/easing/easing.min.js",
+              "src/assets/js/lib/waypoints/waypoints.min.js",
+              "src/assets/js/lib/wow/wow.min.js",
               "src/assets/js/lib/owlcarousel/owl.carousel.min.js",
               "src/assets/js/bootstrap.bundle.min.js",
               "src/assets/js/main.js"

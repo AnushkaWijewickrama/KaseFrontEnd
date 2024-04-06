@@ -39,7 +39,7 @@
         return false;
     });
 
-
+    console.log('fdfdfd')
     // Header carousel
     $(".header-carousel")?.owlCarousel({
         autoplay: true,
