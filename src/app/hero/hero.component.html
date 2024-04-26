@@ -6,14 +6,18 @@
         The Leading Supplier of Air Conditioning
       </p>
     </div>
-    <div class="col-md-6 animated fadeIn" *ngIf="bannerList.length>0">
+    <div class="col-md-6 animated fadeIn">
       <div class="owl-carousel header-carousel">
-        <div class="owl-carousel-item" *ngFor="let item of bannerList">
-          <img class="img-fluid" [src]="item?.imagePath" alt="abc" />
-        </div>
-        <div *ngIf="bannerList.length === 0">
-          <li>There are no items.</li>
-        </div>
+        <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+          @for (item of bannerList; track item._id){
+          <div ngxSlickItem class="slide">
+            <img class="img-fluid" [src]="item?.imagePath" alt="abc" />
+          </div>
+
+          }
+
+        </ngx-slick-carousel>
+
       </div>
     </div>
   </div>

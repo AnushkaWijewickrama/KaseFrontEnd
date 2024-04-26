@@ -16,10 +16,8 @@ export class BrandComponent implements OnInit {
   constructor(private router: ActivatedRoute, private brandService: BrandService) { }
   ngOnInit(): void {
     this.router.params.subscribe((res: any) => {
-      console.log(res.id)
       this.brandService.getBrandSingle(res.id).subscribe((res: HttpResponse<any>) => {
         this.brandList = res.body?.brand
-        console.log(res.body)
       })
     })
   }

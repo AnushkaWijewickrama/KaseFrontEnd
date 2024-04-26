@@ -35,16 +35,17 @@
             "styles": [
               "src/styles.scss",
               "src/assets/css/style.css",
-              "src/assets/js/lib/owlcarousel/assets/owl.carousel.min.css",
               "src/assets/js/lib/animate/animate.min.css",
-              "src/assets/css/bootstrap.min.css"
+              "src/assets/css/bootstrap.min.css",
+              "node_modules/slick-carousel/slick/slick.scss",
+              "node_modules/slick-carousel/slick/slick-theme.scss"
             ],
             "scripts": [
               "src/assets/js/jquery.min.js",
-              "src/assets/js/lib/owlcarousel/owl.carousel.min.js",
               "src/assets/js/lib/easing/easing.min.js",
               "src/assets/js/lib/waypoints/waypoints.min.js",
               "src/assets/js/lib/wow/wow.min.js",
+              "node_modules/slick-carousel/slick/slick.min.js",
               "src/assets/js/bootstrap.bundle.min.js",
               "src/assets/js/main.js"
             ],
@@ -106,16 +107,17 @@
             "styles": [
               "src/styles.scss",
               "src/assets/css/style.css",
-              "src/assets/js/lib/owlcarousel/assets/owl.carousel.min.css",
               "src/assets/js/lib/animate/animate.min.css",
-              "src/assets/css/bootstrap.min.css"
+              "src/assets/css/bootstrap.min.css",
+              "node_modules/slick-carousel/slick/slick.scss",
+              "node_modules/slick-carousel/slick/slick-theme.scss"
             ],
             "scripts": [
               "src/assets/js/jquery.min.js",
               "src/assets/js/lib/easing/easing.min.js",
               "src/assets/js/lib/waypoints/waypoints.min.js",
               "src/assets/js/lib/wow/wow.min.js",
-              "src/assets/js/lib/owlcarousel/owl.carousel.min.js",
+              "node_modules/slick-carousel/slick/slick.min.js",
               "src/assets/js/bootstrap.bundle.min.js",
               "src/assets/js/main.js"
             ]

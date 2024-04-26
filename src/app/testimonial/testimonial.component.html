@@ -3,18 +3,30 @@
     <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px">
       <h1 class="mb-3">Our Clients</h1>
     </div>
-    <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
-      @for (item of clientList; track item._id) {
-      <div class="testimonial-item bg-light rounded p-3">
-        <div class="bg-white border rounded p-4">
-          <div class="d-flex align-items-center">
-            <img class="img-fluid flex-shrink-0 rounded" [src]="item.imagePath" style="width: 200px; height: 200px" />
+    <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+      @for (item of clientList; track item.img) {
+      <div ngxSlickItem class="slide">
+        <div class="testimonial-item bg-light rounded p-3">
+          <div class="bg-white border rounded p-4">
+            <div class="d-flex align-items-center">
+              <img class="img-fluid flex-shrink-0 rounded" [src]="item.imagePath" style="width: 100%; height: 200px" />
+            </div>
           </div>
         </div>
       </div>
+      }
+      <!-- @empty {
+      <li>There are no items.</li>
+      } -->
+
+    </ngx-slick-carousel>
+
+    <!-- <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s" ngSkipHydration>
+      @for (item of clientList; track item._id) {
+    
       } @empty {
       <li>There are no items.</li>
       }
-    </div>
+    </div> -->
   </div>
 </div>

@@ -10,11 +10,11 @@ export class ProductService {
   public SERVER_API_URL = SERVER_API_URL;
   public resourceUrl = this.SERVER_API_URL + '/api/products';
 
-  constructor(protected http: HttpClient) {}
+  constructor(protected http: HttpClient) { }
 
   query(req?: any): Observable<any> {
     const options = createRequestOption(req);
-    return this.http.get<any[]>(this.resourceUrl, { params: options, observe: 'response' });
+    return this.http.get<any>(this.resourceUrl, { params: options, observe: 'response' });
   }
 
 

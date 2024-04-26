@@ -39,44 +39,5 @@
         return false;
     });
 
-    // Header carousel
-    $(".header-carousel")?.owlCarousel({
-        autoplay: true,
-        smartSpeed: 1500,
-        items: 1,
-        dots: true,
-        loop: true,
-        nav: true,
-        navText: [
-            '<i class="fa fa-arrow-right"></i>',
-            '<i class="fa fa-arrow-left"></i>',
-            ''
-        ]
-    });
-
-
-    // Testimonials carousel
-    $(".testimonial-carousel")?.owlCarousel({
-        autoplay: true,
-        smartSpeed: 1000,
-        margin: 24,
-        dots: false,
-        loop: true,
-        nav: true,
-        navText: [
-            '<i class="fa fa-arrow-left"></i>',
-            '<i class="fa fa-arrow-right"></i>',
-            ''
-        ],
-        responsive: {
-            0: {
-                items: 1
-            },
-            992: {
-                items: 3
-            }
-        }
-    });
-
 })(jQuery);
 

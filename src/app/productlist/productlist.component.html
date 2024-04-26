@@ -16,8 +16,8 @@
     <div class="tab-content">
       <div id="tab-1" class="tab-pane fade show p-0 active">
         <div class="row g-4">
-          @for (item of productList; track item.name) {
-          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+          @for (item of productList; track item._id; let i = $index) {
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" *ngIf="i<=8">
             <div class="property-item rounded overflow-hidden">
               <div class="position-relative overflow-hidden">
                 <a [routerLink]="['/brand', item._id]"><img class="img-fluid" [src]="item?.imagePath" alt="" /></a>
