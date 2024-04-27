@@ -27,28 +27,26 @@ export class TestimonialComponent implements OnInit {
     //   '<i class="fa fa-arrow-right"></i>',
     //   ''
     // ],
-    responsive: {
-      0: {
-        items: 1,
-        dots: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3
+        }
       },
-      400: {
-        items: 1,
-        dots: false,
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2
+        }
       },
-      450: {
-        items: 2,
-        dots: false,
-      },
-      740: {
-        items: 4,
-        dots: false,
-      },
-      940: {
-        items: 4,
-        dots: false,
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1
+        }
       }
-    },
+    ]
 
   }
   clientList: any = []

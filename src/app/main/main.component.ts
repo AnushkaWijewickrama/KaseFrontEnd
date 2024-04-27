@@ -8,15 +8,18 @@ import { QuoteComponent } from "../quote/quote.component";
 import { TestimonialComponent } from "../testimonial/testimonial.component";
 import { FooterComponent } from "../footer/footer.component";
 import { ContactusComponent } from "../contactus/contactus.component";
+import { LoaderService } from '../shared/service/loader.service';
+import { AsyncPipe, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-main',
   standalone: true,
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss',
-  imports: [HeaderComponent, HeroComponent, CategoryComponent, AboutComponent, ProductlistComponent, QuoteComponent, TestimonialComponent, FooterComponent, ContactusComponent]
+  imports: [HeaderComponent, HeroComponent, CategoryComponent, AboutComponent, ProductlistComponent, QuoteComponent, TestimonialComponent, FooterComponent, ContactusComponent, AsyncPipe, NgIf]
 })
 export class MainComponent implements OnInit {
+  constructor() { }
   ngOnInit(): void {
     // this.onWindowScroll()
   }

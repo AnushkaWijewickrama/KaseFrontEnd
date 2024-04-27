@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, ElementRef, Input } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -9,5 +9,21 @@ import { RouterLink } from '@angular/router';
   styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
-  @Input() contact = ""
+  constructor(private router: Router) { }
+
+  scrollToSection(section: string): void {
+    const element: any = document.getElementById(section);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    else {
+      this.router.navigate(['/']).then(() => {
+        const element: any = document.getElementById(section);
+        element?.scrollIntoView({ behavior: 'smooth' });
+        console.log('dfdf')
+
+      })
+
+    }
+  }
 }

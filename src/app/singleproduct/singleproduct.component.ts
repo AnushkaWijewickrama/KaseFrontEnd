@@ -4,6 +4,7 @@ import { ProductDetailsService } from '../shared/service/productdetails.service'
 import { HttpResponse } from '@angular/common/http';
 import { HeaderComponent } from "../header/header.component";
 import { FooterComponent } from "../footer/footer.component";
+import { NgxSpinnerService } from 'ngx-spinner';
 
 
 @Component({
@@ -16,13 +17,14 @@ import { FooterComponent } from "../footer/footer.component";
 export class SingleproductComponent implements OnInit {
   productdetailsList: any = []
   selectedId: string = '';
-  constructor(private route: ActivatedRoute, private productDetailsService: ProductDetailsService, public router: Router) { }
+  constructor(private route: ActivatedRoute, private productDetailsService: ProductDetailsService, public router: Router, private spinner: NgxSpinnerService) { }
   ngOnInit(): void {
+    this.spinner.show()
     this.route.params.subscribe((res: any) => {
       this.selectedId = res.id
       this.productDetailsService.query(res.id).subscribe((res: HttpResponse<any>) => {
         this.productdetailsList = res.body.productdetails[0]
-        console.log(res.body.productdetails[0])
+        this.spinner.hide()
       })
     })
     const img: any = document.getElementById("image");

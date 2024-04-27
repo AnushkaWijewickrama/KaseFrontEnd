@@ -4,21 +4,13 @@
     <div class="left">
       <div class="main_image">
         <div class="main">
-          <img
-            [src]="productdetailsList?.imagePath?.[0]"
-            id="image"
-            class="slide img-fluid mt-4"
-          />
+          <img [src]="productdetailsList?.imagePath?.[0]" id="image" class="slide img-fluid mt-4" />
           <div class="zoom-preview"></div>
         </div>
       </div>
-      <div class="option flex">
+      <div class="option flex" style="flex-wrap: nowrap !important;">
         @for (image of productdetailsList.imagePath; track image._id) {
-        <img
-          [src]="image"
-          (click)="img(image)"
-          style="width: 120px; height: 120px"
-        />
+        <img [src]="image" (click)="img(image)" style="width: 120px; height: 120px" />
         } @empty {
         <li>There are no items.</li>
         }
