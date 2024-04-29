@@ -19,7 +19,7 @@ export class HeroComponent implements OnInit {
   slideConfig = {
     slidesToShow: 1,
     nav: true,
-    arrows: true,
+    arrows: false,
     dots: true,
     autoplay: true,
     slideSpeed: 300,
