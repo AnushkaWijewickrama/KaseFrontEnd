@@ -3,3 +3,7 @@
   color: blue;
   /* Add any other styles to indicate the active section */
 }
+
+.ngx-pagination .current {
+  background: #0055a7 !important;
+}

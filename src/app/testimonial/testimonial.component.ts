@@ -3,13 +3,15 @@ import { ClientService } from '../shared/service/client.service';
 import { HttpResponse } from '@angular/common/http';
 import { NgOptimizedImage } from '@angular/common';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { LAZYLOAD_IMAGE_HOOKS, LazyLoadImageModule, ScrollHooks } from 'ng-lazyload-image';
 declare var $: any;
 
 
 @Component({
   selector: 'app-testimonial',
   standalone: true,
-  imports: [NgOptimizedImage, SlickCarouselModule],
+  imports: [NgOptimizedImage, SlickCarouselModule, LazyLoadImageModule],
+  providers: [{ provide: LAZYLOAD_IMAGE_HOOKS, useClass: ScrollHooks }],
   templateUrl: './testimonial.component.html',
   styleUrl: './testimonial.component.scss'
 })
