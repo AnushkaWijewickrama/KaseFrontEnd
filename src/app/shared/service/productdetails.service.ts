@@ -9,11 +9,16 @@ import { createRequestOption } from '../util/request-util';
 export class ProductDetailsService {
   public SERVER_API_URL = SERVER_API_URL;
   public resourceUrl = this.SERVER_API_URL + '/api/product-details';
+  public resourcePDFUrl = this.SERVER_API_URL + '/api/registerDealer';
 
-  constructor(protected http: HttpClient) {}
+  constructor(protected http: HttpClient) { }
 
   query(id?: any): Observable<any> {
-    return this.http.get<any[]>(this.resourceUrl+'/'+id , { observe: 'response' });
+    return this.http.get<any[]>(this.resourceUrl + '/' + id, { observe: 'response' });
+
+  }
+  getRegisterPDF(): Observable<any> {
+    return this.http.get<any[]>(this.resourcePDFUrl, { observe: 'response' });
 
   }
 

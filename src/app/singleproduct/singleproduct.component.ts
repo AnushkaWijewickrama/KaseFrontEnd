@@ -64,13 +64,24 @@ export class SingleproductComponent implements OnInit {
     line.style.background = change;
   }
   getMoreDetails() {
-    const url = this.router.serializeUrl(
-      this.router.createUrlTree(['/pdfviewer', this.selectedId])
-    );
-    window.open(url, '_blank');
+    this.productDetailsService.query(this.selectedId).subscribe((res: HttpResponse<any>) => {
+      let link = document.createElement("a")
+      link.download = res.body.productdetails[0]?.pdf
+      link.href = res.body.productdetails[0]?.pdf
+      link.click()
+    })
   }
   openLg() {
     this.modalService.open(MoredetailsComponent, { size: 'lg' });
+  }
+  downloadPDF() {
+    this.productDetailsService.getRegisterPDF().subscribe((res: HttpResponse<any>) => {
+      let link = document.createElement("a")
+      link.download = res.body?.pdf
+      link.href = res.body?.pdf
+      link.click()
+    })
+
   }
 
 
