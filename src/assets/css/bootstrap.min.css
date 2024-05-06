@@ -54,7 +54,7 @@ body {
   font-weight: 400;
   line-height: 1.5;
   color: #666565;
-  background-color: #deeff5;
+  background-color: #ffff;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
@@ -203,7 +203,7 @@ sup {
   top: -0.5em;
 }
 a {
-  color: #00b98e;
+  color: #0055a7;
   text-decoration: none;
 }
 a:hover {

@@ -33,10 +33,11 @@
       <div id="tab-1" class="tab-pane fade show p-0 active">
         <div class="row g-4">
           @for (item of brandList | paginate: { itemsPerPage: 6, currentPage: p}; track item._id) {
-          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+          <div class="col-lg-4 col-md-6 wow fadeInUp" style="cursor: pointer;" data-wow-delay="0.1s"
+            [routerLink]="['/model', item._id]">
             <div class="property-item rounded overflow-hidden">
               <div class="position-relative overflow-hidden">
-                <a [routerLink]="['/model', item._id]"><img class="img-fluid" [src]="item?.imagePath" alt="" /></a>
+                <a><img class="img-fluid" [src]="item?.imagePath" alt="" /></a>
               </div>
               <div class="p-4 pb-0">
                 <h5 class="text-primary mb-3">{{ item?.title }}</h5>
