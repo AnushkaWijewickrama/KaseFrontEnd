@@ -18,12 +18,11 @@
         <div class="row g-4">
           @for (item of productList | paginate: { itemsPerPage: 6, currentPage: p }; track item._id; let i = $index) {
           <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" *ngIf="i<=8">
-            <div class="property-item rounded overflow-hidden" [routerLink]="['/brand', item._id]"
-              style="cursor: pointer;">
+            <div class="property-item rounded overflow-hidden" [routerLink]="['/brand', item._id]">
               <div class="position-relative overflow-hidden">
-                <a><img class="img-fluid" [lazyLoad]="item?.imagePath" alt="logo" /></a>
+                <img class="img-fluid" [lazyLoad]="item?.imagePath" alt="logo" />
                 <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">
-                  {{ item?.title }}
+                  <!-- {{ item?.title }} -->
                 </div>
               </div>
               <div class="p-4 pb-0">
