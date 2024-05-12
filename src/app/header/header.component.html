@@ -2,7 +2,7 @@
 <div class="container-fluid nav-bar bg-transparent" style="padding: unset !important">
   <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4" style="background-color: #0055A7 !important;">
     <a routerLink="/" class="navbar-brand d-flex align-items-center text-center">
-      <div class="icon p-2 me-2">
+      <div class="icon p-2 me-2" [routerLink]="['/']">
         <img class="img-fluid" src="assets/img/logopng.png" alt="Icon" style="width: 30px; height: 30px" />
       </div>
       <h1 class="m-0 text-white" style="font-size: 13px">
@@ -17,7 +17,7 @@
       <div class="navbar-nav ms-auto">
         <a class="nav-item nav-link active" style="font-size: 13px" [routerLink]="['/']">Home</a>
         <a class="nav-item nav-link" style="font-size: 13px" (click)="scrollToSection('section2')">About</a>
-        <a class="nav-item nav-link" style="font-size: 13px" (click)="scrollToSection('section3')">Contact</a>
+        <a class="nav-item nav-link" style="font-size: 13px" (click)="scrollToSection('section3')">Contact Us</a>
         <a class="nav-item nav-link" style="font-size: 13px" [routerLink]="['/products']">Products</a>
       </div>
     </div>
