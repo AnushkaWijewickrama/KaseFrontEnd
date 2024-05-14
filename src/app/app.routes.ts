@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import { Router, RouterModule, Routes, Scroll } from '@angular/router';
 import { HeaderComponent } from './header/header.component';
 import { MainComponent } from './main/main.component';
 import { BrandComponent } from './brand/brand.component';
@@ -7,6 +7,9 @@ import { SingleproductComponent } from './singleproduct/singleproduct.component'
 import { PdfviewerComponent } from './pdfviewer/pdfviewer.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { ProductsComponent } from './products/products.component';
+import { ViewportScroller } from '@angular/common';
+import { NgModule } from '@angular/core';
+import { filter } from 'rxjs';
 
 export const routes: Routes = [
     {

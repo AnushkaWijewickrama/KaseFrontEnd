@@ -1,5 +1,5 @@
 import { ApplicationConfig } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withInMemoryScrolling } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideClientHydration } from '@angular/platform-browser';
@@ -16,6 +16,12 @@ export const appConfig: ApplicationConfig = {
     useClass: InterceptorService,
     multi: true
   },
+  provideRouter(
+    routes,
+    withInMemoryScrolling({
+      scrollPositionRestoration: "top",
+    })
+  ),
     ScrollToTopService],
 
 
