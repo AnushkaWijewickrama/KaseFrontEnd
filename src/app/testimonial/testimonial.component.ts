@@ -17,7 +17,7 @@ declare var $: any;
 })
 export class TestimonialComponent implements OnInit {
   slideConfig = {
-    slidesToShow: 4,
+    slidesToShow: 6,
     nav: true,
     arrows: true,
     dots: true,
