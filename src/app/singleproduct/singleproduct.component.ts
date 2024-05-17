@@ -8,6 +8,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { MoredetailsComponent } from '../moredetails/moredetails.component';
 import { ContactusComponent } from '../contactus/contactus.component';
+import { PreviousRouteService } from '../shared/util/previous-route.service';
 
 
 @Component({
@@ -21,7 +22,7 @@ export class SingleproductComponent implements OnInit {
   productdetailsList: any = []
   selectedId: string = '';
   private modalService = inject(NgbModal);
-  constructor(private route: ActivatedRoute, private productDetailsService: ProductDetailsService, public router: Router, private spinner: NgxSpinnerService, config: NgbModalConfig) {
+  constructor(private route: ActivatedRoute, private productDetailsService: ProductDetailsService, public router: Router, private spinner: NgxSpinnerService, config: NgbModalConfig, private previousRouteService: PreviousRouteService, private rt: Router) {
     config.backdrop = 'static';
     config.keyboard = false;
   }
@@ -31,10 +32,17 @@ export class SingleproductComponent implements OnInit {
       this.selectedId = res.id
       this.productDetailsService.query(res.id).subscribe((res: HttpResponse<any>) => {
         this.productdetailsList = res.body.productdetails[0]
+        if (res.body.productdetails.includes('none')) {
+          this.rt.navigate([this.previousRouteService.getPreviousUrl()])
+          this.previousRouteService.getPreviousUrl()
+        }
 
         this.spinner.hide()
+      }, (error) => {
+        console.log('sddf')
       })
     })
+
     const img: any = document.getElementById("image");
     const preview: any = document.querySelector(".zoom-preview");
     const calculateRatio = (value: any) => preview.offsetWidth / value;

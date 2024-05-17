@@ -21,7 +21,6 @@ export class ModelComponent implements OnInit {
   ngOnInit(): void {
     this.spinner.show()
     this.router.params.subscribe((res: any) => {
-      console.log(res.id)
       this.modelService.getModelSingle(res.id).subscribe((res: HttpResponse<any>) => {
         this.modelList = res.body?.model
         this.spinner.hide()
