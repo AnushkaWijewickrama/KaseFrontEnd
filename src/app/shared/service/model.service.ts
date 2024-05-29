@@ -10,14 +10,14 @@ export class ModelService {
   public SERVER_API_URL = SERVER_API_URL;
   public resourceUrl = this.SERVER_API_URL + '/api/model';
 
-  constructor(protected http: HttpClient) {}
+  constructor(protected http: HttpClient) { }
 
   query(req?: any): Observable<any> {
     const options = createRequestOption(req);
     return this.http.get<any[]>(this.resourceUrl, { params: options, observe: 'response' });
   }
   getModelSingle(id?: any): Observable<any> {
-    return this.http.get<any[]>(this.resourceUrl+'/'+id , { observe: 'response' });
+    return this.http.get<any[]>(this.resourceUrl + '/' + id, { observe: 'response' });
   }
 
 }

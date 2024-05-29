@@ -33,8 +33,7 @@ export class SingleproductComponent implements OnInit {
       this.productDetailsService.query(res.id).subscribe((res: HttpResponse<any>) => {
         this.productdetailsList = res.body.productdetails[0]
         if (res.body.productdetails.includes('none')) {
-          this.rt.navigate([this.previousRouteService.getPreviousUrl()])
-          this.previousRouteService.getPreviousUrl()
+          this.rt.navigateByUrl(this.previousRouteService.getPreviousUrl())
         }
 
         this.spinner.hide()

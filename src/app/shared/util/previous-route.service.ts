@@ -7,7 +7,7 @@ import { NavigationEnd, Router } from '@angular/router';
 export class PreviousRouteService {
 
 
-  private previousUrl: string = '';
+  private previousUrl!: string;
   private currentUrl: string;
 
   constructor(private router: Router) {
