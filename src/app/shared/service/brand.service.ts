@@ -8,16 +8,16 @@ import { createRequestOption } from '../util/request-util';
 @Injectable({ providedIn: 'root' })
 export class BrandService {
   public SERVER_API_URL = SERVER_API_URL;
-  public resourceUrl = this.SERVER_API_URL + '/api/brand';
+  public resourceUrl = this.SERVER_API_URL + '/api/subCategory';
 
-  constructor(protected http: HttpClient) {}
+  constructor(protected http: HttpClient) { }
 
   query(req?: any): Observable<any> {
     const options = createRequestOption(req);
     return this.http.get<any[]>(this.resourceUrl, { params: options, observe: 'response' });
   }
   getBrandSingle(id?: any): Observable<any> {
-    return this.http.get<any[]>(this.resourceUrl+'/'+id , { observe: 'response' });
+    return this.http.get<any[]>(this.resourceUrl + '/' + id, { observe: 'response' });
   }
 
 }
