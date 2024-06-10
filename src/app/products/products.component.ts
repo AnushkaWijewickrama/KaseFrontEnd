@@ -20,7 +20,6 @@ export class ProductsComponent {
   ngOnInit(): void {
     this.productService.query().subscribe((res: HttpResponse<any>) => {
       this.productList = res.body
-      console.log(res.body)
     })
   }
 }

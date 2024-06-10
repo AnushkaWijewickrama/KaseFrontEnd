@@ -20,7 +20,6 @@ export class HeaderComponent {
       this.router.navigate(['/']).then(() => {
         const element: any = document.getElementById(section);
         element?.scrollIntoView({ behavior: 'smooth' });
-        console.log('dfdf')
 
       })
 

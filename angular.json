@@ -37,6 +37,7 @@
               "src/assets/css/style.css",
               "src/assets/js/lib/animate/animate.min.css",
               "src/assets/css/bootstrap.min.css",
+              "node_modules/ngx-spinner/animations/square-jelly-box.css",
               "node_modules/slick-carousel/slick/slick.scss",
               "node_modules/slick-carousel/slick/slick-theme.scss"
             ],
@@ -106,6 +107,7 @@
             "assets": ["src/favicon.ico", "src/assets"],
             "styles": [
               "src/styles.scss",
+              "node_modules/ngx-spinner/animations/square-jelly-box.css",
               "src/assets/css/style.css",
               "src/assets/js/lib/animate/animate.min.css",
               "src/assets/css/bootstrap.min.css",

@@ -28,7 +28,7 @@
                         [routerLink]="['/brand', item?.subcategories[0]?._id]" style="cursor: pointer;">
                         <div class="property-item rounded overflow-hidden">
                             <div class="position-relative overflow-hidden">
-                                <a><img class="img-fluid" [src]="item?.imagePath" alt="" /></a>
+                                <a><img class="img-fluid" [src]="item?.imagePath" [alt]="item?.imagePath" /></a>
                                 <div
                                     class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">
                                     <!-- {{ item?.title }} -->

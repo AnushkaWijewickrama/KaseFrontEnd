@@ -16,10 +16,8 @@ export class PdfviewerComponent implements OnInit {
   constructor(private route: ActivatedRoute, private productDetailsService: ProductDetailsService) { }
   ngOnInit(): void {
     this.route.params.subscribe((res: any) => {
-      console.log(res)
       this.productDetailsService.query(res.id).subscribe((res: HttpResponse<any>) => {
         this.selectedPdf = res.body.productdetails[0]?.pdf
-        console.log(res.body.productdetails[0])
       })
     })
   }

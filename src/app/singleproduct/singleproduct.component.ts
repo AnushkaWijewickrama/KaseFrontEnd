@@ -1,4 +1,4 @@
-import { Component, OnInit, TemplateRef, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductDetailsService } from '../shared/service/productdetails.service';
 import { HttpResponse } from '@angular/common/http';
@@ -7,7 +7,6 @@ import { FooterComponent } from "../footer/footer.component";
 import { NgxSpinnerService } from 'ngx-spinner';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { MoredetailsComponent } from '../moredetails/moredetails.component';
-import { ContactusComponent } from '../contactus/contactus.component';
 import { PreviousRouteService } from '../shared/util/previous-route.service';
 
 
@@ -38,7 +37,6 @@ export class SingleproductComponent implements OnInit {
 
         this.spinner.hide()
       }, (error) => {
-        console.log('sddf')
       })
     })
 

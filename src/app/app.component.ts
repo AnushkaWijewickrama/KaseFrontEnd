@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { NgxSpinnerModule } from 'ngx-spinner';
@@ -11,5 +11,5 @@ import { NgxSpinnerModule } from 'ngx-spinner';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'aaa';
+  title = 'Kase';
 }
