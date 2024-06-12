@@ -1,11 +1,10 @@
-import { AfterViewInit, Component, ElementRef, Inject, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
+import { Component, ElementRef, Inject, OnInit, PLATFORM_ID, Renderer2 } from '@angular/core';
 import { HttpClient, HttpClientModule, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { createRequestOption } from '../shared/util/request-util';
 import { SERVER_API_URL } from '../shared/util/common-util';
 import { CommonModule, JsonPipe, NgFor, NgIf, isPlatformBrowser } from '@angular/common';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-declare var $: any;
 
 @Component({
   selector: 'app-hero',
@@ -24,11 +23,6 @@ export class HeroComponent implements OnInit {
     autoplay: true,
     slideSpeed: 300,
     loop: true,
-    // navText: [
-    //   '<i class="fa fa-arrow-left"></i>',
-    //   '<i class="fa fa-arrow-right"></i>',
-    //   ''
-    // ],
     responsive: {
       0: {
         items: 1,
