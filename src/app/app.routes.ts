@@ -10,6 +10,7 @@ import { ProductsComponent } from './products/products.component';
 import { ViewportScroller } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { filter } from 'rxjs';
+import { EventsComponent } from './events/events.component';
 
 export const routes: Routes = [
     {
@@ -50,6 +51,13 @@ export const routes: Routes = [
     {
         path: 'products',
         component: ProductsComponent,
+        data: {
+            title: "KASE"
+        }
+    },
+    {
+        path: 'events',
+        component: EventsComponent,
         data: {
             title: "KASE"
         }
