@@ -1,24 +1,32 @@
 <div class="container-fluid header bg-white p-0">
   <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
-    <div class="col-md-6 p-5 mt-lg-5">
+    <div class="col-md-5 p-5 mt-lg-5">
       <h1 class="display-5 animated fadeIn mb-3">K. S. TRADING LANKA <BR> PRIVATE LIMITED</h1>
       <h5 class="animated fadeIn mb-4 pb-2 " style="color: black;">
         The Leading Supplier of Air Conditioning
       </h5>
     </div>
-    <div class="col-md-6 animated fadeIn">
-      <div class="owl-carousel header-carousel">
+    <div class="col-md-7 animated fadeIn">
+      <div class="owl-carousel header-carousel" *ngIf="!safeVideoUrl">
         <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
           @for (item of bannerList; track item._id){
           <div ngxSlickItem class="slide">
             <img class="img-fluid" [src]="item?.imagePath" loading="lazy" />
           </div>
-
           }
-
         </ngx-slick-carousel>
 
       </div>
+      <div class="owl-carousel header-carousel">
+        <div *ngIf="safeVideoUrl;">
+          <iframe [src]="safeVideoUrl" width="100%" height="500"></iframe>
+        </div>
+        <ng-template #errorTemplate>
+          <p>Invalid video URL provided.</p>
+        </ng-template>
+        <!-- <p>{{bannerList[0].videoPath +'?autoplay=1&mute=1&si=TpfIHWg48KrW_QJn'}}</p> -->
+
+        <!-- </div> -->
+      </div>
     </div>
   </div>
-</div>
