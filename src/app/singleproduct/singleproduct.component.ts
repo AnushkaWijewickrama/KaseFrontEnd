@@ -8,6 +8,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { MoredetailsComponent } from '../moredetails/moredetails.component';
 import { PreviousRouteService } from '../shared/util/previous-route.service';
+import { BuynowComponent } from '../buynow/buynow.component';
 
 
 @Component({
@@ -79,15 +80,10 @@ export class SingleproductComponent implements OnInit {
   openLg() {
     this.modalService.open(MoredetailsComponent, { size: 'lg' });
   }
-  downloadPDF() {
-    this.productDetailsService.getRegisterPDF().subscribe((res: HttpResponse<any>) => {
-      let link = document.createElement("a")
-      link.download = res.body?.pdf
-      link.href = res.body?.pdf
-      link.click()
-    })
-
+  openLgBuyNow() {
+    this.modalService.open(BuynowComponent, { size: 'lg' });
   }
+
 
 
 

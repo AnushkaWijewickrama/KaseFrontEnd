@@ -1,0 +1,11 @@
+<div class="modal-header">
+    <h4 class="modal-title text-center h3" id="modal-basic-title" style="width: 100%;"> How to buy? </h4>
+    <button type="button" class="btn-close" style="font-size: 15px;" aria-label="Close" (click)="closeModal()"></button>
+</div>
+<div class="modal-body" style="padding: unset;">
+    <div class="container-xxl py-5" id="section3">
+        <div class="container">
+            <p [innerHTML]="buyNowList?.longDescription"></p>
+        </div>
+    </div>
+</div>

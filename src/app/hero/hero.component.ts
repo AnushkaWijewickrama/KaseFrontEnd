@@ -68,7 +68,6 @@ export class HeroComponent implements OnInit {
   validateAndSanitizeUrl(url: string): void {
     if (this.isValidUrl(url)) {
       this.safeVideoUrl = this.sanitizer.bypassSecurityTrustResourceUrl(url);
-      console.log(this.safeVideoUrl);
     } else {
       console.error('Invalid URL:', url);
     }
