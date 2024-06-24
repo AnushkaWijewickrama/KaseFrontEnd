@@ -18,10 +18,10 @@
     </div>
     <div class="right">
       <h1>{{ productdetailsList?.title }}</h1>
-      <p [innerHTML]="productdetailsList?.longDescription"></p>
+      <div [innerHTML]="productdetailsList?.longDescription" class="mb-3"></div>
       <button class="mb-4" (click)="getMoreDetails()">More Details</button>
       <button (click)="openLg()">Contact Us</button>
-      <button class="mt-4" (click)="openLgBuyNow()">Buy Now</button>
+      <button class="mt-4" (click)="openLgBuyNow()">Buy</button>
     </div>
   </div>
   <app-footer></app-footer>

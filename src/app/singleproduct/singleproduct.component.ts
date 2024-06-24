@@ -31,11 +31,7 @@ export class SingleproductComponent implements OnInit {
     this.route.params.subscribe((res: any) => {
       this.selectedId = res.id
       this.productDetailsService.query(res.id).subscribe((res: HttpResponse<any>) => {
-        this.productdetailsList = res.body.productdetails[0]
-        if (res.body.productdetails.includes('none')) {
-          this.rt.navigateByUrl(this.previousRouteService.getPreviousUrl())
-        }
-
+        this.productdetailsList = res.body
         this.spinner.hide()
       }, (error) => {
       })
@@ -72,8 +68,8 @@ export class SingleproductComponent implements OnInit {
   getMoreDetails() {
     this.productDetailsService.query(this.selectedId).subscribe((res: HttpResponse<any>) => {
       let link = document.createElement("a")
-      link.download = res.body.productdetails[0]?.pdf
-      link.href = res.body.productdetails[0]?.pdf
+      link.download = res.body?.pdf
+      link.href = res.body?.pdf
       link.click()
     })
   }
