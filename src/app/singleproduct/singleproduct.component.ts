@@ -1,5 +1,5 @@
 import { Component, OnInit, inject } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { ProductDetailsService } from '../shared/service/productdetails.service';
 import { HttpResponse } from '@angular/common/http';
 import { HeaderComponent } from "../header/header.component";
@@ -9,6 +9,7 @@ import { NgbModal, NgbModalConfig } from '@ng-bootstrap/ng-bootstrap';
 import { MoredetailsComponent } from '../moredetails/moredetails.component';
 import { PreviousRouteService } from '../shared/util/previous-route.service';
 import { BuynowComponent } from '../buynow/buynow.component';
+import { ContactusModalComponent } from '../contactus-modal/contactus-modal.component';
 
 
 @Component({
@@ -16,7 +17,7 @@ import { BuynowComponent } from '../buynow/buynow.component';
   standalone: true,
   templateUrl: './singleproduct.component.html',
   styleUrl: './singleproduct.component.scss',
-  imports: [HeaderComponent, FooterComponent]
+  imports: [HeaderComponent, FooterComponent, RouterLink]
 })
 export class SingleproductComponent implements OnInit {
   productdetailsList: any = []
@@ -55,7 +56,7 @@ export class SingleproductComponent implements OnInit {
     })
   }
   openLg() {
-    this.modalService.open(MoredetailsComponent, { size: 'lg' });
+    this.modalService.open(ContactusModalComponent, { size: 'lg' });
   }
   openLgBuyNow() {
     this.modalService.open(BuynowComponent, { size: 'lg' });

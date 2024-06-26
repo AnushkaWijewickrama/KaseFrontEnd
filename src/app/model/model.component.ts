@@ -12,7 +12,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
   standalone: true,
   templateUrl: './model.component.html',
   styleUrl: './model.component.scss',
-  imports: [HeaderComponent, RouterLink, FooterComponent, NgxPaginationModule]
+  imports: [HeaderComponent, RouterLink, FooterComponent, NgxPaginationModule, RouterLink]
 })
 export class ModelComponent implements OnInit {
   modelList: any = []
