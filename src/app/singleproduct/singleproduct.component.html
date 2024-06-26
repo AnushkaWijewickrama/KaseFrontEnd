@@ -1,11 +1,30 @@
 <section>
   <app-header></app-header>
+  <div class="container-fluid header bg-white p-0 mb-4">
+    <div class="row g-0 align-items-center flex-column-reverse flex-md-row">
+      <div class="col-md-6 p-5 mt-lg-5">
+        <h1 class="display-5 animated fadeIn mb-4">Product</h1>
+        <nav aria-label="breadcrumb animated fadeIn">
+          <ol class="breadcrumb text-uppercase">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item"><a>Pages</a></li>
+            <li class="breadcrumb-item text-body active" aria-current="page">
+              Product
+            </li>
+          </ol>
+        </nav>
+      </div>
+      <div class="col-md-6 animated fadeIn">
+        <img class="img-fluid" src="assets/img/1.webp" alt="" />
+      </div>
+    </div>
+  </div>
   <div class="container flex">
     <div class="left">
       <div class="main_image">
         <div class="main">
           <img [src]="productdetailsList?.imagePath?.[0]" [alt]="productdetailsList?.imagePath?.[0]" id="image"
-            class="slide img-fluid mt-4" />
+            class="slide img-fluid " />
         </div>
       </div>
       <div class="option flex" style="flex-wrap: nowrap !important;">
@@ -17,7 +36,7 @@
       </div>
     </div>
     <div class="right">
-      <h1>{{ productdetailsList?.title }}</h1>
+      <h4>{{ productdetailsList?.title }}</h4>
       <div [innerHTML]="productdetailsList?.longDescription" class="mb-3"></div>
       <button class="mb-4" (click)="getMoreDetails()">More Details</button>
       <button (click)="openLg()">Contact Us</button>

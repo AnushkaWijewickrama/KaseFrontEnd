@@ -31,30 +31,11 @@ export class SingleproductComponent implements OnInit {
     this.route.params.subscribe((res: any) => {
       this.selectedId = res.id
       this.productDetailsService.query(res.id).subscribe((res: HttpResponse<any>) => {
-        this.productdetailsList = res.body
+        this.productdetailsList = res.body?.productdetails[0]
         this.spinner.hide()
       }, (error) => {
       })
     })
-
-    const img: any = document.getElementById("image");
-    const preview: any = document.querySelector(".zoom-preview");
-    const calculateRatio = (value: any) => preview.offsetWidth / value;
-    const x = calculateRatio(100);
-    const y = calculateRatio(100);
-    const setBackgroundProperties = (posX: any, posY: any) => {
-      preview.style.backgroundImage = `url(${img.src})`;
-      preview.style.backgroundSize = `${img.width * x}px ${img.height * y}px`;
-      preview.style.backgroundPosition = `-${posX * x}px -${posY * y}px`;
-    };
-    img.addEventListener("mousemove", (e: any) => {
-      const posX = e.offsetX;
-      const posY = e.offsetY;
-      setBackgroundProperties(posX, posY);
-    });
-    img.addEventListener("mouseout", () => {
-      preview.style.backgroundImage = "none";
-    });
   }
   img(anything: any) {
     const x: any = document.querySelector('.slide')
@@ -68,8 +49,8 @@ export class SingleproductComponent implements OnInit {
   getMoreDetails() {
     this.productDetailsService.query(this.selectedId).subscribe((res: HttpResponse<any>) => {
       let link = document.createElement("a")
-      link.download = res.body?.pdf
-      link.href = res.body?.pdf
+      link.download = res.body?.productdetails[0].pdf
+      link.href = res.body?.productdetails[0].pdf
       link.click()
     })
   }

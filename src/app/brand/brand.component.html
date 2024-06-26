@@ -21,15 +21,12 @@
 <div class="container-xxl py-5">
   <div class="container">
     <div class="row g-0 gx-5 align-items-end">
-      <div class="col-lg-6">
-        <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s"></div>
-      </div>
       <div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s"></div>
     </div>
     <div class="tab-content">
       <div id="tab-1" class="tab-pane fade show p-0 active">
         <div class="row g-4">
-          @for (item of brandList | paginate: { itemsPerPage: 6, currentPage: p}; track item._id) {
+          @for (item of brandList?.brand | paginate: { itemsPerPage: 6, currentPage: p}; track item._id) {
           <div class="col-lg-4 col-md-6 wow fadeInUp" style="cursor: pointer;" data-wow-delay="0.1s"
             [routerLink]="['/model', item._id]">
             <div class="property-item rounded overflow-hidden">
@@ -38,7 +35,9 @@
               </div>
               <div class="p-4 pb-0">
                 <h5 class="text-primary mb-3">{{ item?.title }}</h5>
-                <a class="d-block h5 mb-2" [routerLink]="['/model', item._id]">{{ item?.description }}</a>
+                <a class="d-block h6 mb-2 text-black" style="color: #7A7A7A !important;"
+                  [routerLink]="['/model', brandList?._id]">{{ item?.description
+                  }}</a>
               </div>
             </div>
           </div>

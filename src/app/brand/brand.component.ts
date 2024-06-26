@@ -23,7 +23,7 @@ export class BrandComponent implements OnInit {
     this.spinner.show()
     this.router.params.subscribe((res: any) => {
       this.brandService.getBrandSingle(res.id).subscribe((res: HttpResponse<any>) => {
-        this.brandList = res.body?.brand
+        this.brandList = res.body
         this.spinner.hide()
       })
     })

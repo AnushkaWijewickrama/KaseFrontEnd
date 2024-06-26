@@ -31,16 +31,16 @@
       <div id="tab-1" class="tab-pane fade show p-0 active">
         <div class="row g-4">
           @for (item of modelList | paginate: { itemsPerPage: 6, currentPage: p}; track item._id) {
-          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s"
-            [routerLink]="['/productsingle', item?.productdetails[0]?._id]" style="cursor: pointer;">
+          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" [routerLink]="['/productsingle', item._id]"
+            style="cursor: pointer;">
             <div class="property-item rounded overflow-hidden">
               <div class="position-relative overflow-hidden">
                 <a><img class="img-fluid" [src]="item?.imagePath" [alt]="item?.title" /></a>
               </div>
               <div class="p-4 pb-0">
-                <h5 class="text-primary mb-3">{{ item?.title }}</h5>
-                <a class="d-block h5 mb-2" [routerLink]="['/productsingle', item?.productdetails[0]?._id]">{{
-                  item?.description }}</a>
+                <h5 class="text-primary mb-1">{{ item?.title }}</h5>
+                <a class="d-block h5 mb-2 h6" style="color: #7A7A7A !important;"
+                  [routerLink]="['/productsingle', item._id]">{{ item?.description }}</a>
               </div>
             </div>
           </div>
