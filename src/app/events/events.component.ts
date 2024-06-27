@@ -7,13 +7,14 @@ import { Observable } from 'rxjs';
 import { createRequestOption } from '../shared/util/request-util';
 import { SERVER_API_URL } from '../shared/util/common-util';
 import { FooterComponent } from "../footer/footer.component";
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-events',
   standalone: true,
   templateUrl: './events.component.html',
   styleUrl: './events.component.scss',
-  imports: [HeaderComponent, HttpClientModule, JsonPipe, NgFor, NgIf, CommonModule, SlickCarouselModule, FooterComponent]
+  imports: [HeaderComponent, HttpClientModule, JsonPipe, NgFor, NgIf, CommonModule, SlickCarouselModule, FooterComponent, RouterLink]
 })
 export class EventsComponent {
   slideConfig = {

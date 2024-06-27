@@ -5,7 +5,7 @@
             <h1 class="display-5 animated fadeIn mb-4">Events</h1>
             <nav aria-label="breadcrumb animated fadeIn">
                 <ol class="breadcrumb text-uppercase">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a routerLink="/">Home</a></li>
                     <li class="breadcrumb-item"><a>Pages</a></li>
                     <li class="breadcrumb-item text-body active" aria-current="page">
                         Events
@@ -21,16 +21,16 @@
 <div class="container">
     <div class="row">
         @for (mainItem of eventsList; track mainItem._id){
-        <h3 class="text-left">{{mainItem.title}}</h3>
-        <h4 class="text-left" style="color: #000 !important;">{{mainItem.description}}</h4>
-        <h5 class="text-left" style="color: #000 !important;">{{mainItem.longDescription}}</h5>
+        <h3 class="text-left wow fadeInUp">{{mainItem.title}}</h3>
+        <h4 class="text-left wow fadeInUp" style="color: #000 !important;">{{mainItem.description}}</h4>
+        <h5 class="text-left wow fadeInUp" style="color: #000 !important;">{{mainItem.longDescription}}</h5>
         <hr />
 
-        <div class="col-md-6 animated fadeIn mt-4">
+        <div class="col-md-6 animated fadeIn mt-4 wow fadeInUp">
             <img [src]="mainItem.imagePath[0]" alt="" class="img-fluid"
                 style="border-radius: 5%;box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.5);">
         </div>
-        <div class=" mt-4 col-md-6 animated fadeIn">
+        <div class=" mt-4 col-md-6 animated fadeIn wow fadeInUp">
             <div class="owl-carousel header-carousel">
                 <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
                     @for (item of mainItem?.imagePath; track item){
