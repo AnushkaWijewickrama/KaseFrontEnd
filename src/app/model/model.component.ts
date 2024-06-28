@@ -23,8 +23,8 @@ export class ModelComponent implements OnInit {
     this.router.params.subscribe((res: any) => {
       this.modelService.getModelSingle(res.id).subscribe((res: HttpResponse<any>) => {
         this.modelList = res.body
-        this.modelList.sort((a: any, b: any) => {
-          return a.sortval - b.sortval;
+        this.modelList?.sort((a: any, b: any) => {
+          return a?.sortval - b?.sortval;
         });
         this.spinner.hide()
       })
