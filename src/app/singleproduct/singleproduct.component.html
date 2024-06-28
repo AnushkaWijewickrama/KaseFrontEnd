@@ -37,7 +37,7 @@
     </div>
     <div class="right">
       <h4>{{ productdetailsList?.title }}</h4>
-      <div [innerHTML]="productdetailsList?.longDescription" class="mb-3"></div>
+      <div [innerHTML]="productdetailsList?.longDescription" class="mb-3" style="text-align: justify !important;font-weight: bold;"></div>
       <button class="mb-4" (click)="getMoreDetails()">More Details</button>
       <button (click)="openLg()">Contact Us</button>
       <button class="mt-4" (click)="openLgBuyNow()">Buy</button>
